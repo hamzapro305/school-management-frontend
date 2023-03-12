@@ -1,0 +1,16 @@
+.Dashboard-Sidebar {
+	background-color: red;
+	.allRoutes {
+		display: flex;
+		padding: 20px;
+		flex-direction: column;
+		gap: 20px;
+		.route {
+			background-color: green;
+			padding: 10px;
+			cursor: pointer;
+			border-radius: 0.4rem;
+			color: white;
+		}
+	}
+}

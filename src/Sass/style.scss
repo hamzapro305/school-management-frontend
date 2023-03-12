@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@import "./vars";
+
+// Dashboard
+@import "./Dasboard/index.scss";
+
+// Components
+@import "./Componenets/index.scss";

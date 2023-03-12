@@ -1,0 +1,13 @@
+.AllStudents {
+	padding: 20px;
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		.Student {
+			padding: 10px;
+			border: 1px solid red;
+			border-radius: 0.2rem;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+.AddProfileImageModal {
+	width: 30vw;
+	background-color: white;
+	border-radius: 1rem;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	.head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+		.title {
+			font-size: 30px;
+			font-weight: bolder;
+		}
+		button {
+			padding: 10px;
+			cursor: pointer;
+		}
+	}
+	.body {
+		padding: 0 10px;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		.input {
+			width: 100%;
+			flex: 1;
+		}
+	}
+}

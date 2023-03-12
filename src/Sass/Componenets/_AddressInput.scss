@@ -1,0 +1,31 @@
+.AddressInput_Global {
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 0.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	label {
+		font-size: 22px;
+	}
+	&-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+		.input {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			font-family: $MainFont;
+			label {
+				font-size: 16px;
+			}
+			input {
+				outline: none;
+				border: 1px solid rgb(156, 156, 156);
+				border-radius: 0.1rem;
+				padding: 5px;
+			}
+		}
+	}
+}
