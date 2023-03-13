@@ -9,7 +9,7 @@ const Sidebar = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const RouteHandler = (path) => navigate(path);
-	const [isOpen, setIsOpen] = useState(true);
+	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<motion.div
 			className="Dashboard-Sidebar"
@@ -19,7 +19,7 @@ const Sidebar = () => {
 			}}
 			exit={{}}
 		>
-			<div className="logo" onClick={() => RouteHandler('/')}>
+			<div className="logo" onClick={() => RouteHandler("/")}>
 				<HiOutlineAcademicCap color="white" size={45} />
 			</div>
 			<div className="allRoutes">

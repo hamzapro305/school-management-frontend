@@ -34,6 +34,11 @@ $LightBackground: #e3e6ff;
 	align-items: center;
 }
 
+@mixin grid($val) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+}
+
 // For Spacing Between Component
 @mixin SPACE($space, $space-lg, $space-md) {
 	padding-top: #{$space}px;

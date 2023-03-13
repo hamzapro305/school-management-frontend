@@ -5,8 +5,17 @@
 	gap: 30px;
 	padding: 10px 0;
 	overflow-x: hidden;
+	@include responsive(md) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 97vh;
+		z-index: 9999;
+	}
 	.logo {
-		padding-left: 7px;
+		padding-left: 6px;
+		cursor: pointer;
+		position: relative;
 	}
 	.handler {
 		cursor: pointer;
@@ -37,7 +46,7 @@
 				top: 0;
 				left: 0;
 				background-color: green;
-				width: 5px;
+				width: 3px;
 				height: 100%;
 			}
 		}
