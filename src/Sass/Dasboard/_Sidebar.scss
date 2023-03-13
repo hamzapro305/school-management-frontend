@@ -1,16 +1,30 @@
 .Dashboard-Sidebar {
 	background-color: red;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	.logo {
+		@extend %FlexCenter;
+	}
 	.allRoutes {
 		display: flex;
-		padding: 20px;
 		flex-direction: column;
 		gap: 20px;
 		.route {
-			background-color: green;
 			padding: 10px;
+			position: relative;
 			cursor: pointer;
-			border-radius: 0.4rem;
 			color: white;
+			@extend %FlexCenter;
+			font-size: 20px;
+			.left-border {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: green;
+				width: 5px;
+				height: 100%;
+			}
 		}
 	}
 }

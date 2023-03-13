@@ -1,5 +1,6 @@
 import StudentApi from "APIs/StudentApi";
 import BackDrop from "Components/BackDrop";
+import CircularProgressBar from "Components/CircularProgressBar";
 import ImageInput from "Components/ImageInput";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,11 +20,21 @@ const AddProfileImageModal = () => {
 		if (ProfileImage) {
 			setUploading((p) => ({ ...p, isLoading: true }));
 			try {
-                await 
+				const downloadUrl = await StudentApi.addStudentProfileImage(
+					addProfileImage,
+					ProfileImage,
+					(progress) => setUploading((p) => ({ ...p, progress }))
+				);
+				const newStudent = await StudentApi.updateStudent(addProfileImage, 
+					{
+						profile_image: downloadUrl,
+					}
+				);
+				setStudent(newStudent);
 			} catch (error) {
-                console.log(error)
-            }
-			setUploading((p) => ({ ...p, isLoading: true }));
+				console.log(error);
+			}
+			setUploading({ progress: 0, isLoading: false });
 		}
 	};
 
@@ -40,6 +51,12 @@ const AddProfileImageModal = () => {
 	return (
 		<BackDrop>
 			<div className="AddProfileImageModal">
+				{Uploading.isLoading && (
+					<div className="loading">
+						<CircularProgressBar Progress={Uploading.progress} />
+					</div>
+				)}
+
 				<div className="head MF">
 					<div className="title">Add Profile Image</div>
 					<button onClick={CloseModal}>X</button>
@@ -47,12 +64,12 @@ const AddProfileImageModal = () => {
 				<div className="body">
 					<div className="input">
 						<ImageInput
-							value={ProfileImage}
+							value={ProfileImage ?? Student?.profile_image}
 							setValue={(img) => setProfileImage(img)}
 							label="Upload Profile Image"
 						/>
 					</div>
-					<button>Upload</button>
+					<button onClick={Submit}>Upload</button>
 				</div>
 			</div>
 		</BackDrop>

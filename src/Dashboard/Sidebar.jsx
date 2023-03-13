@@ -1,13 +1,24 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Routes } from "../Data/Accessories";
+import { motion } from "framer-motion";
+import { HiOutlineAcademicCap } from "react-icons/hi";
 
 const Sidebar = () => {
 	const navigate = useNavigate();
-	const RouteHandler = (path) => {
-		navigate(path);
-	};
+	const location = useLocation();
+	const RouteHandler = (path) => navigate(path);
 	return (
-		<div className="Dashboard-Sidebar">
+		<motion.div
+			className="Dashboard-Sidebar"
+			initial={{}}
+			animate={{
+				width: "55px",
+			}}
+			exit={{}}
+		>
+			<div className="logo">
+				<HiOutlineAcademicCap color="white" size={45} />
+			</div>
 			<div className="allRoutes">
 				{Routes.map((x) => (
 					<div
@@ -15,11 +26,17 @@ const Sidebar = () => {
 						className="route MF"
 						key={x.path}
 					>
-						<span>{x.name}</span>
+						{x.icon}
+						{location.pathname === x.path && (
+							<motion.div
+								className="left-border"
+								layoutId="leftBorder"
+							></motion.div>
+						)}
 					</div>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

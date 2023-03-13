@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ServiceDomain } from "Data/Accessories";
 
 class API {
@@ -26,21 +27,17 @@ class API {
 		return new Promise(async (res, rej) => {
 			const API_URL = `${ServiceDomain}/api/v1/student/UploadProfileImage/${StudentId}`;
 			try {
-				var myHeaders = new Headers();
-				myHeaders.append("Content-Type", "multipart/form-data");
-
-				var formData = new FormData();
+				let formData = new FormData();
 				formData.append("file", Image);
 
-				const downloadUrl = await fetch(API_URL, {
-					method: "POST",
-					headers: myHeaders,
-					body: formData,
-					redirect: "follow",
-					onUploadProgress: setLoading ?? (() => {}),
+				const downloadUrl = await axios.post(API_URL, formData, {
+					onUploadProgress: (progressEvent) => {
+						const { loaded, total } = progressEvent;
+						const percent = Math.floor((loaded * 100) / total);
+						setLoading && setLoading(percent);
+					},
 				});
-				await this.updateStudent(StudentId, { profile_image: downloadUrl });
-				res(true);
+				res(downloadUrl.data);
 			} catch (error) {
 				console.log(error);
 				rej(null);
@@ -67,6 +64,7 @@ class API {
 			}
 		});
 	}
+
 	getStudentById(id) {
 		return new Promise(async (res, rej) => {
 			try {
@@ -78,6 +76,7 @@ class API {
 			}
 		});
 	}
+	
 	getStudents() {
 		return new Promise(async (res, rej) => {
 			const API_URL = `${ServiceDomain}/api/v1/student/getStudents`;
@@ -90,5 +89,5 @@ class API {
 		});
 	}
 }
-
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new API();

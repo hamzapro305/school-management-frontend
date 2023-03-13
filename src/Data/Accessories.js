@@ -1,11 +1,16 @@
+import { AiOutlineUserAdd } from "react-icons/ai";
+import { FaListOl } from "react-icons/fa";
+
 export const Routes = [
 	{
 		name: "All Students",
 		path: "/allStudents",
+		icon: <FaListOl />,
 	},
 	{
 		name: "Add Students",
 		path: "/addStudent",
+		icon: <AiOutlineUserAdd />,
 	},
 ];
 
@@ -17,12 +22,24 @@ export const StudentSchema = {
 	mother_name: "",
 	surname: "",
 	date_of_birth: "",
-	place_of_birth: { streetAddress: "", city: "", state: "", country: "", postalCode: "", },
+	place_of_birth: {
+		streetAddress: "",
+		city: "",
+		state: "",
+		country: "",
+		postalCode: "",
+	},
 	gender: "",
 	guardian_name: "",
 	phone_no: "",
 	mobile_no: "",
-	address: { streetAddress: "", city: "", state: "", country: "", postalCode: "", },
+	address: {
+		streetAddress: "",
+		city: "",
+		state: "",
+		country: "",
+		postalCode: "",
+	},
 	admission_date: "",
 	admission_fees: 0,
 	finger_image: null,

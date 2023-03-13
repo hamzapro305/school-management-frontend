@@ -1,8 +1,8 @@
 .Dashboard {
-	display: grid;
-	grid-template-columns: 0.2fr 1fr;
+	display: flex;
 	height: 100vh;
 }
 
+// Dashboard Main Components
 @import "./Sidebar";
 @import "./Panel";

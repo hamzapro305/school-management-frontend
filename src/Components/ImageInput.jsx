@@ -12,10 +12,7 @@ const ImageInput = ({ label, setValue, value }) => {
 			return URL.createObjectURL(image);
 		}
 	};
-	const ImageHandler = ({ target }) => {
-		console.log(target.files[0])
-		setValue(target.files[0]);
-	};
+	const ImageHandler = ({ target }) => setValue(target.files[0]);
 	return (
 		<div className="ImageInput_Global MF">
 			<label>{label}</label>

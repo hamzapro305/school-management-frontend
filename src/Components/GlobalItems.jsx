@@ -1,6 +1,6 @@
-const GlobalMainButton = ({ content, cssClass, isLoading }) => {
+const GlobalMainButton = ({ content, cssClass, isLoading, onClick }) => {
 	return (
-		<button className="GlobalMainButton">
+		<button onClick={() => onClick && onClick()} className="GlobalMainButton">
 			{isLoading ? "Loading..." : content}
 		</button>
 	);

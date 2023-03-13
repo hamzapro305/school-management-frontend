@@ -1,15 +1,9 @@
 .AddStudent {
 	padding: 20px 10px;
 	.form-wrapper {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		display: flex;
+		flex-direction: column;
 		gap: 20px;
-		.l-col,
-		.r-col {
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
-		}
 		.student-form {
 			display: grid;
 			grid-template-columns: 1fr 1fr;

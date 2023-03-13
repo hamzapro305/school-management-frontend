@@ -28,6 +28,12 @@ $LightTextColor: rgba(80, 80, 80, 0.5);
 $Blue: #131ef3;
 $LightBackground: #e3e6ff;
 
+%FlexCenter{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 // For Spacing Between Component
 @mixin SPACE($space, $space-lg, $space-md) {
 	padding-top: #{$space}px;

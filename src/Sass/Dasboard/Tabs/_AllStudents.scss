@@ -5,9 +5,14 @@
 		flex-direction: column;
 		gap: 30px;
 		.Student {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
 			padding: 10px;
 			border: 1px solid red;
 			border-radius: 0.2rem;
+			.field {
+				@extend %FlexCenter;
+			}
 		}
 	}
 }

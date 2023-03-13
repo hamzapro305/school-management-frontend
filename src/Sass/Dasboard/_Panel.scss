@@ -1,5 +1,7 @@
 .Dashboard-Panel {
 	overflow-y: scroll;
+	flex: 1;
+	
 	// Tabs
 	@import "./Tabs/AllStudents";
 	@import "./Tabs/AddStudent";
