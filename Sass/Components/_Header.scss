@@ -1,0 +1,21 @@
+header {
+	@include MaxWidth;
+	margin: 0 auto;
+	.header-wrapper {
+		display: flex;
+		justify-content: space-between;
+		background-color: red;
+		padding: 20px;
+		.logo {
+			color: white;
+		}
+		nav {
+			display: flex;
+			gap: 20px;
+			a {
+				text-decoration: none;
+				color: white;
+			}
+		}
+	}
+}

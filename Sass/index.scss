@@ -1,0 +1,13 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+// Variables
+@import "./vars";
+
+// Components
+@import "./Components/index";
+
+// Pages
+@import "./Pages/index";

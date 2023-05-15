@@ -1,0 +1,36 @@
+.StudentCard {
+	background-color: white;
+	border-radius: 0.5rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	padding: 2rem;
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+		.info {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			text-align: center;
+			.fullName {
+				font-size: 15px;
+			}
+			.userName {
+				font-size: 12px;
+			}
+			.email {
+				font-size: 10px;
+				color: gray;
+			}
+		}
+		.actions {
+			display: flex;
+			gap: 20px;
+			button {
+				padding: 4px 10px;
+				cursor: pointer;
+			}
+		}
+	}
+}

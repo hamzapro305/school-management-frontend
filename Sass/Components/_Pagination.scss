@@ -1,0 +1,39 @@
+.Pagination {
+	max-width: 600px;
+	width: 100%;
+	margin: 0 auto;
+	&-wrapper {
+		padding: 20px;
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		.options {
+			display: flex;
+			gap: 15px;
+			.move_action {
+				padding: 5px 10px;
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				background-color: gray;
+				color: white;
+				border-radius: 0.3rem;
+			}
+			.numbers {
+				display: flex;
+				gap: 5px;
+				a {
+					text-decoration: none;
+					color: rgb(53, 53, 53);
+					padding: 10px;
+					width: 30px;
+					display: flex;
+					justify-content: center;
+					&.active {
+						background-color: red;
+						color: white;
+						border-radius: 0.2rem;
+					}
+				}
+			}
+		}
+	}
+}
