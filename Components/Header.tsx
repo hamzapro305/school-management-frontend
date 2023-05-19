@@ -1,13 +1,13 @@
 import Link from "next/link";
-import React from "react";
+import { FC } from "react";
 
-const Header = () => {
+const Header: FC = () => {
 	return (
 		<header>
 			<div className="header-wrapper">
 				<div className="logo MF">School Management</div>
 				<nav className="MF">
-					<Link href="/about">About</Link>
+					<Link href="/About">About</Link>
 					<Link href="/">Home</Link>
 				</nav>
 			</div>

@@ -1,8 +1,12 @@
 "use client";
 
+import { IStudent } from "@/Types/StudentType";
 import Image from "next/image";
+import { FC } from "react";
 
-const StudentCard = ({ Student }) => {
+type Component = FC<{ Student: IStudent }>;
+
+const StudentCard: Component = ({ Student }) => {
 	return (
 		<div className="StudentCard">
 			<div className="StudentCard-wrapper">

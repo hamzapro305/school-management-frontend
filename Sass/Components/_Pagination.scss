@@ -7,6 +7,7 @@
 		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 		.options {
 			display: flex;
+			justify-content: center;
 			gap: 15px;
 			.move_action {
 				padding: 5px 10px;
@@ -25,12 +26,16 @@
 					color: rgb(53, 53, 53);
 					padding: 10px;
 					width: 30px;
+					border-radius: 0.2rem;
 					display: flex;
 					justify-content: center;
+					&:hover {
+						background-color: rgba(255, 0, 0, 0.495);
+						color: white;
+					}
 					&.active {
 						background-color: red;
 						color: white;
-						border-radius: 0.2rem;
 					}
 				}
 			}
