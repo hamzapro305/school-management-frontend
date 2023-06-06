@@ -24,6 +24,7 @@ const StudentCard: Component = ({ Student }) => {
 					<div className="userName">{Student?.userName}</div>
 					<div className="email">{Student?.email}</div>
 					<div className="age">Age: {Student?.age}</div>
+					<div className="age">Roles: {Student.roles.toString()}</div>
 				</div>
 				<div className="actions">
 					<button>Open</button>

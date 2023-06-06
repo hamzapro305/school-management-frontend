@@ -6,7 +6,7 @@ interface IStudent {
 	userName: string;
 	fullName: string;
 	gender: string;
-	roles: string[];
+	roles: ("ROLE_ADMIN" | "ROLE_STUDENT" | "ROLE_TEACHER")[];
 }
 
 export type { IStudent };

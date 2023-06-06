@@ -3,6 +3,10 @@ const nextConfig = {
 	images: {
 		domains: ["cloudflare-ipfs.com"],
 	},
+	reactStrictMode: false,
+	experimental: {
+		
+	}
 };
 
 module.exports = nextConfig;

@@ -11,3 +11,10 @@
 
 // Pages
 @import "./Pages/index";
+
+body {
+	display: flex;
+	.MainSite {
+		flex: 1;
+	}
+}

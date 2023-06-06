@@ -1,3 +1,4 @@
+import { DemoStudentsResp } from "@/StudentJsonDemoData";
 import { IStudent } from "@/Types/StudentType";
 
 interface ResponseStandardType<T> {
@@ -18,22 +19,23 @@ class API {
 	): Promise<getStudentsResponse> => {
 		return new Promise(async (res, rej) => {
 			try {
-				const api: URL = new URL(API.api.toString() + "getStudents");
+				res(DemoStudentsResp.data)
+				// const api: URL = new URL(API.api.toString() + "getStudents");
 
-				api.searchParams.set("Page", PageNo.toString());
-				api.searchParams.set("Size", PageSize.toString());
+				// api.searchParams.set("Page", PageNo.toString());
+				// api.searchParams.set("Size", PageSize.toString());
 
-				const resp: Response = await fetch(api, {
-					method: "GET",
-					next: {
-						revalidate: 20,
-					},
-				});
-				const Data: Promise<ResponseStandardType<getStudentsResponse>> =
-					resp.json();
-				const DataInJson: getStudentsResponse = (await Data).data;
+				// console.log(api.toString())
 
-				res(DataInJson);
+				// const resp: Response = await fetch(api, {
+				// 	method: "GET",
+				// });
+				
+				// const Data: Promise<ResponseStandardType<getStudentsResponse>> =
+				// 	resp.json();
+				// const DataInJson: getStudentsResponse = (await Data).data;
+
+				// res(DataInJson);
 			} catch (error) {
 				console.log(error);
 				rej(null);
