@@ -1,7 +1,4 @@
 .HomePage {
-	@include MaxWidth;
-	margin: 0 auto;
-	padding: 20px;
 	.listStudents {
 		display: flex;
 		flex-direction: column;

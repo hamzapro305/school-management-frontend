@@ -1,6 +1,6 @@
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 // Variables
@@ -13,8 +13,10 @@
 @import "./Pages/index";
 
 body {
-	display: flex;
-	.MainSite {
-		flex: 1;
-	}
+    display: flex;
+    @include MaxWidth;
+    margin: 0 auto;
+    .MainSite {
+        flex: 1;
+    }
 }

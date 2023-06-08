@@ -13,28 +13,10 @@ type Component = FC<{
 	searchParams: { page: number | undefined };
 }>;
 
-/* @ts-expect-error Server Component */
-const page: Component = async ({ searchParams }) => {
-	const { page: Page } = searchParams;
-
-	// const StudentData = await StudentAPI.getStudents(
-	// 	Page ?? 0,
-	// 	(process.env.SizeToLoadStudents ?? 10) as number
-	// );
-
-	// const { students, totalPages } = StudentData;
+const page = async () => {
 
 	return (
 		<div className="HomePage">
-			<div className="listStudents">
-				<div className="listStudents-wrapper">
-					{/* {students?.map((Std) => (
-						<StudentCard key={Std.studentId} Student={Std} />
-					))} */}
-					home
-				</div>
-				{/* <Pagination currentPage={+(Page ?? 0)} totalPages={totalPages} /> */}
-			</div>
 		</div>
 	);
 };

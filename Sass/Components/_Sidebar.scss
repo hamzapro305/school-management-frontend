@@ -1,0 +1,14 @@
+.SideBar {
+    background-color: green;
+    .head {
+        display: grid;
+        align-items: center;
+        height: 60px;
+        padding: 0 6px;
+        button {
+            padding: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+    }
+}

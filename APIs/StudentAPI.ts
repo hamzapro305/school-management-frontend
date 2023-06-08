@@ -19,7 +19,11 @@ class API {
 	): Promise<getStudentsResponse> => {
 		return new Promise(async (res, rej) => {
 			try {
-				res(DemoStudentsResp.data)
+				const data = {
+					totalPages: DemoStudentsResp.data.totalPages,
+					students: DemoStudentsResp.data.students.slice(0, 10)
+				}
+				res(data)
 				// const api: URL = new URL(API.api.toString() + "getStudents");
 
 				// api.searchParams.set("Page", PageNo.toString());
