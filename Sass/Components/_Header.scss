@@ -3,6 +3,7 @@ header {
 		display: flex;
 		justify-content: space-between;
 		background-color: red;
+		align-items: center;
 		padding: 20px;
 		.logo {
 			color: white;
@@ -10,6 +11,7 @@ header {
 		nav {
 			display: flex;
 			gap: 20px;
+			align-items: center;
 			a {
 				text-decoration: none;
 				color: white;

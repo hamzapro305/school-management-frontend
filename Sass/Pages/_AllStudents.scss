@@ -1,0 +1,15 @@
+.AllStudents {
+    .listStudents {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        button {
+            align-self: center;
+        }
+        &-wrapper {
+            @include grid(250px);
+            gap: 20px;
+        }
+    }
+}

@@ -10,7 +10,7 @@ type Component = FC<{
 
 const Pagination: Component = ({ currentPage, totalPages }) => {
 	const getLink = (currentPage: number) => {
-		return `/?page=${currentPage}`;
+		return `/AllStudents?page=${currentPage}`;
 	};
 
 	const getPages = (number: number): number[] => {

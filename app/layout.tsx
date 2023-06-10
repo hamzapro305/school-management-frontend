@@ -19,7 +19,7 @@ export default function RootLayout({
 				<main className="MainSite">
 					<Header />
 
-					<section>{children}</section>
+					<section className="MainSection">{children}</section>
 
 					<Footer />
 				</main>
