@@ -1,11 +1,12 @@
 import { DemoStudentsResp } from "@/StudentJsonDemoData";
 import { IStudent } from "@/Types/StudentType";
+import { Deferred } from "./Deferred";
 
 interface ResponseStandardType<T> {
 	data: T;
 }
 
-interface getStudentsResponse {
+interface StudentsResponse {
 	totalPages: number;
 	students: IStudent[];
 }
@@ -16,35 +17,34 @@ class API {
 	public static getStudents = (
 		PageNo: number,
 		PageSize: number
-	): Promise<getStudentsResponse> => {
-		return new Promise(async (res, rej) => {
-			try {
-				const data = {
-					totalPages: DemoStudentsResp.data.totalPages,
-					students: DemoStudentsResp.data.students.slice(0, 10)
-				}
-				res(data)
-				// const api: URL = new URL(API.api.toString() + "getStudents");
-
-				// api.searchParams.set("Page", PageNo.toString());
-				// api.searchParams.set("Size", PageSize.toString());
-
-				// console.log(api.toString())
-
-				// const resp: Response = await fetch(api, {
-				// 	method: "GET",
-				// });
-				
-				// const Data: Promise<ResponseStandardType<getStudentsResponse>> =
-				// 	resp.json();
-				// const DataInJson: getStudentsResponse = (await Data).data;
-
-				// res(DataInJson);
-			} catch (error) {
-				console.log(error);
-				rej(null);
+	): Promise<StudentsResponse> => {
+		const prom = new Deferred<StudentsResponse>()
+		try {
+			const data = {
+				totalPages: DemoStudentsResp.data.totalPages,
+				students: DemoStudentsResp.data.students.slice(0, 10)
 			}
-		});
+			// const api: URL = new URL(API.api.toString() + "getStudents");
+			
+			// api.searchParams.set("Page", PageNo.toString());
+			// api.searchParams.set("Size", PageSize.toString());
+
+			// console.log(api.toString())
+
+			// const resp: Response = await fetch(api, {
+			// 	method: "GET",
+			// });
+			
+			// const Data: Promise<ResponseStandardType<getStudentsResponse>> =
+			// 	resp.json();
+			// const DataInJson: getStudentsResponse = (await Data).data;
+
+			prom.resolve(data)
+		} catch (error) {
+			console.log(error);
+			prom.reject(null)
+		}
+		return prom.promise
 	};
 }
 
