@@ -3,12 +3,14 @@
 import { IStudent } from "@/Types/StudentType";
 import Image from "next/image";
 import { FC } from "react";
+import Tilt from 'react-parallax-tilt';
+
 
 type Component = FC<{ Student: IStudent }>;
 
 const StudentCard: Component = ({ Student }) => {
 	return (
-		<div className="StudentCard">
+		<Tilt className="StudentCard" >
 			<div className="StudentCard-wrapper">
 				<Image
 					src={Student?.photoURL}
@@ -31,7 +33,7 @@ const StudentCard: Component = ({ Student }) => {
 					<button>Delete</button>
 				</div>
 			</div>
-		</div>
+		</Tilt>
 	);
 };
 

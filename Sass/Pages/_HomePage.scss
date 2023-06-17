@@ -1,0 +1,20 @@
+.HomePage {
+    height: 100%;
+    &-wrapper {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+        height: calc(100% - 40px);
+        .banner {
+            background-color: pink;
+        }
+        .boxes {
+            @include grid(200px);
+            gap: 20px;
+            .box {
+                background-color: yellow;
+            }
+        }
+    }
+}
