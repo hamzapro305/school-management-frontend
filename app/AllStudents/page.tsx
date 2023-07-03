@@ -1,41 +1,35 @@
 import StudentAPI from "@/APIs/StudentAPI";
-import Pagination from "@/Components/Pagination";
-import StudentCard from "@/Components/StudentCard";
-import * as _ from "lodash"
+import StudentList from "@/Components/StudentList";
 import { FC } from "react";
 
-
 export const metadata = {
-	title: "All Students",
+    title: "All Students",
 };
 
 type Component = FC<{
-	searchParams: { page: number };
+    searchParams: { page: number };
 }>;
 
 /* @ts-expect-error Server Component */
 const page: Component = async ({ searchParams }) => {
-	const { page: Page } = searchParams;
+    const { page: Page } = searchParams;
 
-	const StudentData = await StudentAPI.getStudents(
-		Page ?? 0,
-		(process.env.SizeToLoadStudents ?? 10) as number
-	);
+    const getStudentData = async (pageNo?: number) => {
+        "use server";
 
-	const { students, totalPages } = StudentData;
+        const StudentData = await StudentAPI.getStudents(
+            pageNo ?? 0,
+            (process.env.SizeToLoadStudents ?? 10) as number
+        );
 
-	return (
-		<div className="AllStudents">
-			<div className="listStudents">
-				<div className="listStudents-wrapper">
-					{students?.map((Std) => (
-						<StudentCard key={Std.studentId} Student={Std} />
-					))}
-				</div>
-				<Pagination currentPage={+(Page ?? 0)} totalPages={totalPages} />
-			</div>
-		</div>
-	);
+        return StudentData;
+    };
+
+    return (
+        <div className="AllStudents">
+            <StudentList getStudents={getStudentData} Page={Page}/>
+        </div>
+    );
 };
 
 export default page;
